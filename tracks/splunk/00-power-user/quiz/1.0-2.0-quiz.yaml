@@ -1,0 +1,75 @@
+# Blueprint-derived quiz — sections 1.0 and 2.0.
+# Generated from cited notes only (see sources.md). Not real/leaked exam
+# questions — question style and coverage follow the public blueprint topics.
+
+- id: q-1.1-a
+  blueprint_ref: "1.1"
+  question: "You run `... | chart count by category`. What determines the x-axis of the resulting chart?"
+  choices:
+    a: "The category field, since it's named in the BY clause"
+    b: "_time, always"
+    c: "Whichever field appears first in the raw events"
+    d: "count, since it's the statistical function"
+  answer: a
+  explanation: "chart's x-axis is the arbitrary field in the BY clause — unlike timechart, which always uses _time."
+  source_note: notes/1.1-1.2-transforming-commands.md
+
+- id: q-1.2-a
+  blueprint_ref: "1.2"
+  question: "You run `timechart count by host` with no `bins` or `span` specified. What bins value does Splunk use by default?"
+  choices:
+    a: "10"
+    b: "100"
+    c: "1"
+    d: "It errors and requires bins or span to be set"
+  answer: b
+  explanation: "timechart defaults to bins=100 when neither bins nor span is given."
+  source_note: notes/1.1-1.2-transforming-commands.md
+
+- id: q-2.1-a
+  blueprint_ref: "2.1"
+  question: "Which of the following is a valid constraint on an eval expression's result?"
+  choices:
+    a: "It must be numeric"
+    b: "It cannot be a Boolean"
+    c: "It must be a string"
+    d: "There is no constraint"
+  answer: b
+  explanation: "The result of an eval expression cannot be a Boolean, per Splunk's eval command reference."
+  source_note: notes/2.1-2.3-filtering-formatting.md
+
+- id: q-2.2-a
+  blueprint_ref: "2.2"
+  question: "You need to filter results where fieldA does not equal fieldB (comparing two fields to each other). Which command can do this?"
+  choices:
+    a: "search"
+    b: "where"
+    c: "Neither can compare two fields"
+    d: "Both equally well"
+  answer: b
+  explanation: "where can compare two different fields against each other; search generally cannot express this."
+  source_note: notes/2.1-2.3-filtering-formatting.md
+
+- id: q-2.2-b
+  blueprint_ref: "2.2"
+  question: "Why does Splunk recommend using `search` over `where` whenever the filter can be expressed either way?"
+  choices:
+    a: "where is deprecated"
+    b: "search runs earlier (on indexers), reducing network traffic and processing load"
+    c: "where cannot use Boolean logic"
+    d: "search supports more field types"
+  answer: b
+  explanation: "search executes early in the pipeline on the indexers; where executes later on the search head, so filtering earlier is more efficient."
+  source_note: notes/2.1-2.3-filtering-formatting.md
+
+- id: q-2.3-a
+  blueprint_ref: "2.3"
+  question: "`... | fillnull value=0` is run with no field list given. What happens?"
+  choices:
+    a: "It errors, since a field list is required"
+    b: "Only the first null field found is replaced"
+    c: "The value 0 is applied to all fields with null values"
+    d: "Nothing — value requires a field list to take effect"
+  answer: c
+  explanation: "With no field list, fillnull applies its replacement value to all fields."
+  source_note: notes/2.1-2.3-filtering-formatting.md

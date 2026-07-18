@@ -1,0 +1,48 @@
+- id: eval-01
+  front: "Can the result of an SPL eval expression be a Boolean?"
+  back: "No — the result of an eval expression cannot be a Boolean."
+  source_note: notes/2.1-2.3-filtering-formatting.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/SearchReference/Eval
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: eval-02
+  front: "How do you reference a field named `server-1` inside an eval expression, and why?"
+  back: "As 'server-1' (single-quoted) — required because the field name contains a non-alphanumeric character other than underscore."
+  source_note: notes/2.1-2.3-filtering-formatting.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/SearchReference/Eval
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: search-vs-where-01
+  front: "Can the `where` command compare two different fields against each other? Can `search`?"
+  back: "Yes for where; search cannot do this — where can compare two fields, search generally can't."
+  source_note: notes/2.1-2.3-filtering-formatting.md
+  source_url: https://docs.splunk.com/Documentation/SCS/current/SearchReference/WhereCommandOverview
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: search-vs-where-02
+  front: "Why should you prefer `search` over `where` when either could express the filter?"
+  back: "search runs early on the indexers, reducing network traffic and processing load; where runs later on the search head, so filtering earlier via search is more efficient."
+  source_note: notes/2.1-2.3-filtering-formatting.md
+  source_url: https://docs.splunk.com/Documentation/SCS/current/SearchReference/WhereCommandOverview
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: fillnull-01
+  front: "What does fillnull do if you don't give it a field list?"
+  back: "It applies the replacement value to all fields, not just some."
+  source_note: notes/2.1-2.3-filtering-formatting.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/SearchReference/Fillnull
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: fillnull-02
+  front: "How do you set what fillnull replaces nulls with?"
+  back: "The value=<string> option, e.g. fillnull value=NULL"
+  source_note: notes/2.1-2.3-filtering-formatting.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/SearchReference/Fillnull
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: fillnull-03
+  front: "If you run fillnull with no value= option specified, what value does it use?"
+  back: "0 (zero) is the default replacement value."
+  source_note: notes/2.1-2.3-filtering-formatting.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/SearchReference/Fillnull
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}

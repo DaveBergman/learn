@@ -1,0 +1,34 @@
+- id: chart-01
+  front: "What kind of command is `chart`, and what does it return?"
+  back: "A transforming command — it returns results in a table format that can be rendered as a chart (column/line/area/pie)."
+  source_note: notes/1.1-1.2-transforming-commands.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/SearchReference/Chart
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: chart-02
+  front: "How many BY clauses can a single `chart` command use?"
+  back: "Only one — though you can specify multiple statistical functions in that same invocation."
+  source_note: notes/1.1-1.2-transforming-commands.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/SearchReference/Chart
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: chart-vs-timechart-01
+  front: "What is the key structural difference between `chart` and `timechart`?"
+  back: "`chart`'s x-axis is an arbitrary field named in the BY clause; `timechart`'s x-axis is always _time."
+  source_note: notes/1.1-1.2-transforming-commands.md
+  source_url: https://docs.splunk.com/Documentation/SCS/current/SearchReference/TimechartCommandOverview
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: timechart-01
+  front: "If you specify neither `bins` nor `span` in a `timechart` command, what's the default?"
+  back: "bins=100"
+  source_note: notes/1.1-1.2-transforming-commands.md
+  source_url: https://docs.splunk.com/Documentation/SCS/current/SearchReference/TimechartCommandOverview
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: timechart-02
+  front: "What must a `timechart` command specify at minimum?"
+  back: "Either a single aggregate function, or an SPL expression paired with a BY clause."
+  source_note: notes/1.1-1.2-transforming-commands.md
+  source_url: https://docs.splunk.com/Documentation/SCS/current/SearchReference/TimechartCommandOverview
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}

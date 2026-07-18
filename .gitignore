@@ -1,0 +1,9 @@
+node_modules/
+site/dist/
+dist/
+*.apkg
+.DS_Store
+.env
+site/public/decks/*.json
+site/public/quizzes/*.json
+site/public/content/

@@ -1,0 +1,41 @@
+- id: cim-01
+  front: "What is the Common Information Model (CIM)?"
+  back: "A standard set of field names and data structures provided by Splunk to normalize diverse log sources. It enables consistent field naming across different vendors and data sources."
+  source_note: notes/10.1-10.3-cim.md
+  source_url: https://docs.splunk.com/Documentation/CIM/latest/User/Overview
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: cim-02
+  front: "How is CIM distributed in Splunk?"
+  back: "As an add-on (TA-common_information_model) that includes field aliases, calculated fields, event types, tags, and pre-built data models."
+  source_note: notes/10.1-10.3-cim.md
+  source_url: https://docs.splunk.com/Documentation/CIM/latest/User/Overview
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: cim-03
+  front: "Does CIM modify your indexed data?"
+  back: "No — CIM applies via field aliases and calculated fields at search time. Your indexed data remains unchanged."
+  source_note: notes/10.1-10.3-cim.md
+  source_url: https://docs.splunk.com/Documentation/CIM/latest/User/Overview
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: cim-domains-01
+  front: "Name three CIM domains (coverage areas)."
+  back: "Examples: Authentication, Network, Intrusion Detection, Vulnerability, Web, Email, Endpoint. (Any three are correct.)"
+  source_note: notes/10.1-10.3-cim.md
+  source_url: https://docs.splunk.com/Documentation/CIM/latest/User/Overview
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: cim-objects-01
+  front: "What types of knowledge objects does the CIM add-on include?"
+  back: "Field aliases, calculated fields, event types, tags, data model definitions, and (in some versions) correlation searches."
+  source_note: notes/10.1-10.3-cim.md
+  source_url: https://docs.splunk.com/Documentation/CIM/latest/User/Overview
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: cim-normalize-01
+  front: "How does CIM enable cross-source searches?"
+  back: "By normalizing field names across vendors, CIM allows a single search (e.g., `src=192.168.1.100 action=success`) to work across Windows, Linux, Cisco, and other sources without rewriting."
+  source_note: notes/10.1-10.3-cim.md
+  source_url: https://docs.splunk.com/Documentation/CIM/latest/User/Overview
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}

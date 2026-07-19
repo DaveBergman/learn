@@ -1,0 +1,41 @@
+- id: tags-01
+  front: "What is a tag in Splunk?"
+  back: "A custom label (name-value pair) applied to field values to organize and categorize data. Tags are search-time only and do not modify indexed data."
+  source_note: notes/6.1-6.3-tags-event-types.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/Managetags
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: tags-02
+  front: "How do you search for events with a specific tag?"
+  back: "Use the syntax `tag=<tagname>` in your search, e.g., `user=admin tag=privileged` filters to admins tagged as privileged."
+  source_note: notes/6.1-6.3-tags-event-types.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/Managetags
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: tags-03
+  front: "Can multiple tags be applied to the same field value?"
+  back: "Yes — you can assign multiple tags to a single field value for flexible organization and filtering."
+  source_note: notes/6.1-6.3-tags-event-types.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/Managetags
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: eventtype-01
+  front: "What is an event type?"
+  back: "A saved search expression that identifies a category of events. Once defined, you can search using `eventtype=<name>` instead of re-typing the full search criteria."
+  source_note: notes/6.1-6.3-tags-event-types.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/Createeventtypes
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: eventtype-02
+  front: "What is the key difference between a tag and an event type?"
+  back: "Tags label field values; event types are based on search criteria. Event types are more complex, reusable searches, while tags are simpler post-hoc field labels."
+  source_note: notes/6.1-6.3-tags-event-types.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/Createeventtypes
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: eventtype-03
+  front: "How do you create an event type from a search result?"
+  back: "Run a search capturing your desired events. Click 'Save As' → 'Event Type', assign a name, and save. Then use `eventtype=<name>` in future searches."
+  source_note: notes/6.1-6.3-tags-event-types.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/Createeventtypes
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}

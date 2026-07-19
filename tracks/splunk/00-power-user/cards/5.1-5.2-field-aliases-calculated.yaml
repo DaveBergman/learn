@@ -1,0 +1,41 @@
+- id: fieldalias-01
+  front: "What is a field alias?"
+  back: "An alternate name for an existing field. It does not transform or compute values — it simply provides a semantic mapping from one field name to another for consistency across data sources."
+  source_note: notes/5.1-5.2-field-aliases-calculated.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/Createfieldalias
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: fieldalias-02
+  front: "At what point in the pipeline are field aliases applied?"
+  back: "Search time — they are applied when searching, not during indexing. This makes them lightweight and easily changeable."
+  source_note: notes/5.1-5.2-field-aliases-calculated.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/Createfieldalias
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: fieldalias-03
+  front: "Where are field aliases defined in props.conf?"
+  back: "Using the FIELDALIAS-<name> directive under the relevant sourcetype or source stanza: `FIELDALIAS-src_as_client = src_ip AS client_ip`"
+  source_note: notes/5.1-5.2-field-aliases-calculated.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/Createfieldalias
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: calcfield-01
+  front: "What is a calculated field?"
+  back: "A field whose value is computed at search time using an eval expression. Unlike aliases, calculated fields transform or derive new data from existing fields."
+  source_note: notes/5.1-5.2-field-aliases-calculated.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/Calculatedfieldformulas
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: calcfield-02
+  front: "What is the syntax for defining a calculated field in props.conf?"
+  back: "`EVAL-<name> = <eval_expression>`, e.g., `EVAL-profit = price - cost` or `EVAL-hours_ago = floor((now() - timestamp) / 3600)`"
+  source_note: notes/5.1-5.2-field-aliases-calculated.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/Calculatedfieldformulas
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: fieldalias-vs-calcfield
+  front: "When should you use a field alias instead of a calculated field?"
+  back: "Use an alias when you only need to rename an existing field for consistency. Use a calculated field when you need to transform or derive new data."
+  source_note: notes/5.1-5.2-field-aliases-calculated.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/Calculatedfieldformulas
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}

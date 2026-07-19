@@ -1,0 +1,327 @@
+# Blueprint-derived quiz — sections 3.0 through 10.0.
+# Generated from cited notes only (see sources.md). Not real/leaked exam
+# questions — question style and coverage follow the public blueprint topics.
+
+- id: q-3.1-a
+  blueprint_ref: "3.1"
+  question: "What does a transaction in Splunk represent?"
+  choices:
+    a: "A group of related events that share a common field value within a time window"
+    b: "A single event record with multiple fields"
+    c: "A statistical summary collapsed into one row"
+    d: "A saved search definition"
+  answer: a
+  explanation: "A transaction is an event-level grouping that preserves individual events while marking them with shared transaction metadata."
+  source_note: notes/3.1-3.6-transactions.md
+
+- id: q-3.2-a
+  blueprint_ref: "3.2"
+  question: "When using `transaction sessionID`, which events are grouped together?"
+  choices:
+    a: "All events with identical sessionID values within the time window"
+    b: "Only the first event in each sessionID group"
+    c: "Events with similar (not identical) sessionID values"
+    d: "The last 100 events, regardless of sessionID"
+  answer: a
+  explanation: "The transaction command groups all events with matching values in the specified field(s) within a time window."
+  source_note: notes/3.1-3.6-transactions.md
+
+- id: q-3.3-a
+  blueprint_ref: "3.3"
+  question: "In `transaction sessionID maxspan=1h maxpause=10m`, what does maxpause control?"
+  choices:
+    a: "The maximum gap between consecutive events; if exceeded, a new transaction starts"
+    b: "The maximum total time span of the entire transaction"
+    c: "The maximum number of events in a transaction"
+    d: "The maximum time to wait for events before timing out"
+  answer: a
+  explanation: "maxpause (default 30m) limits the duration of inactivity between consecutive events. Gaps exceeding maxpause start a new transaction."
+  source_note: notes/3.1-3.6-transactions.md
+
+- id: q-3.4-a
+  blueprint_ref: "3.4"
+  question: "You filter on `transaction_duration > 300` after creating transactions. What are you filtering for?"
+  choices:
+    a: "Transactions lasting longer than 5 minutes (300 seconds)"
+    b: "Events with timestamps greater than 300"
+    c: "Transactions with more than 300 events"
+    d: "Transactions occurring after time 300"
+  answer: a
+  explanation: "transaction_duration is the time span of a transaction (end time minus start time). Filtering on > 300 returns transactions longer than 300 seconds (5 minutes)."
+  source_note: notes/3.1-3.6-transactions.md
+
+- id: q-3.5-a
+  blueprint_ref: "3.5"
+  question: "After creating transactions, which of the following is a valid reporting operation?"
+  choices:
+    a: "Pipe transactions into `stats` to compute aggregations like count and avg(transaction_duration)"
+    b: "Transactions cannot be piped to other commands"
+    c: "Only `chart` and `timechart` work with transactions"
+    d: "Transactions must be converted to stats first"
+  answer: a
+  explanation: "Transactions can be piped to `stats`, `timechart`, `chart`, `table`, and other reporting commands for aggregation and visualization."
+  source_note: notes/3.1-3.6-transactions.md
+
+- id: q-3.6-a
+  blueprint_ref: "3.6"
+  question: "When should you use `stats` instead of `transaction`?"
+  choices:
+    a: "When you only need aggregate summaries and efficiency matters more than preserving individual events"
+    b: "When you need to preserve original field values from each event"
+    c: "When you want to track temporal sequences"
+    d: "When grouping by multiple fields"
+  answer: a
+  explanation: "`stats` is more efficient because it collapses groups into single summary rows, making it ideal when you only need aggregations."
+  source_note: notes/3.1-3.6-transactions.md
+
+- id: q-4.1-a
+  blueprint_ref: "4.1"
+  question: "In regex field extraction, what do capturing groups (parentheses) represent?"
+  choices:
+    a: "The text matched within parentheses is extracted as the field value"
+    b: "Parentheses create a new transaction group"
+    c: "They are used to match, but their content is discarded"
+    d: "They define a required field name"
+  answer: a
+  explanation: "In regex extraction, text within capturing groups () is extracted and becomes the field value."
+  source_note: notes/4.1-4.2-field-extraction.md
+
+- id: q-4.2-a
+  blueprint_ref: "4.2"
+  question: "You have CSV data: `alice,200,purchase,14.50`. Using delimiter extraction with comma delimiter, how many fields will be created?"
+  choices:
+    a: "Four fields (one per comma-separated value)"
+    b: "One field containing the entire line"
+    c: "Two fields (before and after the first comma)"
+    d: "It depends on the number of events"
+  answer: a
+  explanation: "Delimiter extraction splits the line on the delimiter character. Four comma-separated values create four fields."
+  source_note: notes/4.1-4.2-field-extraction.md
+
+- id: q-5.1-a
+  blueprint_ref: "5.1"
+  question: "What does a field alias do?"
+  choices:
+    a: "Provides an alternate name for an existing field without transforming its value"
+    b: "Transforms field values using an eval expression"
+    c: "Creates a new calculated field"
+    d: "Combines multiple fields into one"
+  answer: a
+  explanation: "A field alias is a simple name mapping from one field name to another. It does not transform values."
+  source_note: notes/5.1-5.2-field-aliases-calculated.md
+
+- id: q-5.2-a
+  blueprint_ref: "5.2"
+  question: "Which configuration defines a calculated field in props.conf?"
+  choices:
+    a: "`EVAL-fieldname = expression`"
+    b: "`FIELDALIAS-fieldname = source AS alias`"
+    c: "`CALC-fieldname = eval(expression)`"
+    d: "`CALCULATED-fieldname = expression`"
+  answer: a
+  explanation: "Calculated fields use the EVAL-<name> = <expression> syntax in props.conf."
+  source_note: notes/5.1-5.2-field-aliases-calculated.md
+
+- id: q-6.1-a
+  blueprint_ref: "6.1"
+  question: "How do you search for events tagged with 'privileged'?"
+  choices:
+    a: "`tag=privileged`"
+    b: "`tags: privileged`"
+    c: "`tagged=privileged`"
+    d: "`privilege_tag=privileged`"
+  answer: a
+  explanation: "Tags are searched using the `tag=<tagname>` syntax."
+  source_note: notes/6.1-6.3-tags-event-types.md
+
+- id: q-6.2-a
+  blueprint_ref: "6.2"
+  question: "What is the primary advantage of event types over tags?"
+  choices:
+    a: "Event types are based on complex search criteria and are highly reusable across searches"
+    b: "Event types are faster than tags"
+    c: "Event types can be applied to multiple fields at once"
+    d: "Event types do not require configuration"
+  answer: a
+  explanation: "Event types are saved search expressions enabling complex, reusable categorizations, while tags are simpler field value labels."
+  source_note: notes/6.1-6.3-tags-event-types.md
+
+- id: q-6.3-a
+  blueprint_ref: "6.3"
+  question: "From the UI, how do you create an event type from a search result?"
+  choices:
+    a: "Run a search, click 'Save As' → 'Event Type', assign a name, and save"
+    b: "Right-click a field value and select 'Create Event Type'"
+    c: "Use the Settings menu to manually define event types"
+    d: "Event types can only be created by editing eventtypes.conf"
+  answer: a
+  explanation: "The UI allows you to save a search as an event type directly from the 'Save As' menu."
+  source_note: notes/6.1-6.3-tags-event-types.md
+
+- id: q-7.1-a
+  blueprint_ref: "7.1"
+  question: "What is a macro in Splunk?"
+  choices:
+    a: "A reusable SPL fragment substituted into searches using backtick syntax"
+    b: "A pre-recorded workflow for automated tasks"
+    c: "A tag or label applied to searches"
+    d: "A performance optimization tool"
+  answer: a
+  explanation: "Macros are reusable SPL fragments defined in macros.conf and called using backticks (`` `macro_name` ``)."
+  source_note: notes/7.1-7.4-macros.md
+
+- id: q-7.2-a
+  blueprint_ref: "7.2"
+  question: "A macro is defined as `definition = status=200 OR status=201`. How do you use it in a search?"
+  choices:
+    a: "`` sourcetype=web `macro_name` ``"
+    b: "`` sourcetype=web (status=200 OR status=201) ``"
+    c: "sourcetype=web macro:macro_name"
+    d: "Use the macro in the Settings menu, not in searches"
+  answer: a
+  explanation: "Macros are called using backticks in searches. The macro's definition is substituted inline."
+  source_note: notes/7.1-7.4-macros.md
+
+- id: q-7.3-a
+  blueprint_ref: "7.3"
+  question: "How do you define a macro argument in the macro definition?"
+  choices:
+    a: "Use `$argument_name$` as a placeholder"
+    b: "Use `{argument_name}` as a placeholder"
+    c: "Use `[argument_name]` as a placeholder"
+    d: "Arguments must be hardcoded; macros do not support parameters"
+  answer: a
+  explanation: "Macro arguments are defined using the $argument_name$ syntax and substituted when the macro is called."
+  source_note: notes/7.1-7.4-macros.md
+
+- id: q-7.4-a
+  blueprint_ref: "7.4"
+  question: "A macro is defined with arguments: `definition = status=$status$ host=$host$`. How do you call it with values?"
+  choices:
+    a: "`` `macro_name(500, web-prod)` ``"
+    b: "`macro_name status=500 host=web-prod`"
+    c: "`macro_name=$status$ $host$`"
+    d: "`` `macro_name($status$, $host$)` ``"
+  answer: a
+  explanation: "Macros with arguments are called by passing values in parentheses, comma-separated."
+  source_note: notes/7.1-7.4-macros.md
+
+- id: q-8.1-a
+  blueprint_ref: "8.1"
+  question: "What is the key difference between GET and POST workflow actions?"
+  choices:
+    a: "GET sends data in the URL; POST sends data in the request body"
+    b: "GET is faster; POST is slower"
+    c: "POST cannot access external systems"
+    d: "GET is used for Splunk searches; POST is for external APIs"
+  answer: a
+  explanation: "GET appends parameters to the URL, while POST sends data in the request body, making POST more suitable for complex or sensitive payloads."
+  source_note: notes/8.1-8.4-workflow-actions.md
+
+- id: q-8.2-a
+  blueprint_ref: "8.2"
+  question: "In a GET workflow action, what does `$click.value$` represent?"
+  choices:
+    a: "The value of the field that was clicked"
+    b: "The name of the field that was clicked"
+    c: "The entire event clicked"
+    d: "The timestamp of the event"
+  answer: a
+  explanation: "`$click.value$` substitutes the value of the clicked field into the URL or payload."
+  source_note: notes/8.1-8.4-workflow-actions.md
+
+- id: q-8.3-a
+  blueprint_ref: "8.3"
+  question: "Why might you prefer a POST workflow action over GET for sensitive data?"
+  choices:
+    a: "POST sends data in the request body (not in the URL) and supports authentication headers"
+    b: "POST is always faster"
+    c: "POST has no security implications"
+    d: "POST does not require HTTPS"
+  answer: a
+  explanation: "POST is more secure because sensitive data is not exposed in the URL and it supports encrypted headers."
+  source_note: notes/8.1-8.4-workflow-actions.md
+
+- id: q-8.4-a
+  blueprint_ref: "8.4"
+  question: "When would you use a Search workflow action instead of GET/POST?"
+  choices:
+    a: "To pivot to a related search within Splunk, drilling down into related data"
+    b: "To integrate with external APIs"
+    c: "To create incidents in external systems"
+    d: "To replace saved searches"
+  answer: a
+  explanation: "Search workflow actions trigger new Splunk searches, enabling drill-down and investigation within Splunk, unlike GET/POST which target external systems."
+  source_note: notes/8.1-8.4-workflow-actions.md
+
+- id: q-9.1-a
+  blueprint_ref: "9.1"
+  question: "What is the relationship between data models and pivot?"
+  choices:
+    a: "Data models define the schema; pivot uses data models to generate SPL queries automatically"
+    b: "Pivot defines the schema; data models use pivot for visualization"
+    c: "They are the same thing"
+    d: "Data models and pivot are independent features"
+  answer: a
+  explanation: "Data models provide the structure and field definitions; pivot is the UI tool that uses data models to build reports without writing SPL."
+  source_note: notes/9.1-9.3-data-models.md
+
+- id: q-9.2-a
+  blueprint_ref: "9.2"
+  question: "What is a data model attribute?"
+  choices:
+    a: "A field or property within a data model object used for filtering, grouping, and aggregation"
+    b: "A saved search within a data model"
+    c: "A type of acceleration algorithm"
+    d: "A tag applied to data model objects"
+  answer: a
+  explanation: "Attributes are fields within data model objects that you filter, group, and aggregate on in pivot reports."
+  source_note: notes/9.1-9.3-data-models.md
+
+- id: q-9.3-a
+  blueprint_ref: "9.3"
+  question: "After creating a data model, what is the primary benefit of enabling acceleration?"
+  choices:
+    a: "Splunk pre-computes and caches data model results, making pivot queries much faster"
+    b: "It doubles the storage capacity"
+    c: "It enables real-time updates to the data model"
+    d: "It removes the need to define attributes"
+  answer: a
+  explanation: "Data model acceleration caches pre-computed results, significantly improving the performance of pivot queries on large datasets."
+  source_note: notes/9.1-9.3-data-models.md
+
+- id: q-10.1-a
+  blueprint_ref: "10.1"
+  question: "What is the primary purpose of the Splunk CIM add-on?"
+  choices:
+    a: "To provide standard field names and data structures for normalizing diverse log sources"
+    b: "To replace Splunk dashboards"
+    c: "To encrypt indexed data"
+    d: "To enforce user authentication"
+  answer: a
+  explanation: "The CIM add-on standardizes field names across different vendors, enabling consistent cross-source searches and analysis."
+  source_note: notes/10.1-10.3-cim.md
+
+- id: q-10.2-a
+  blueprint_ref: "10.2"
+  question: "Which of the following are included with the Splunk CIM Add-On?"
+  choices:
+    a: "Field aliases, calculated fields, event types, tags, and data model definitions"
+    b: "Only field aliases"
+    c: "Only data model definitions"
+    d: "Dashboard templates and visualizations only"
+  answer: a
+  explanation: "The CIM add-on includes field aliases, calculated fields, event types, tags, and pre-built data models for normalizing data."
+  source_note: notes/10.1-10.3-cim.md
+
+- id: q-10.3-a
+  blueprint_ref: "10.3"
+  question: "After installing the CIM add-on, how do you apply its normalizations to your data?"
+  choices:
+    a: "CIM field mappings are automatically applied at search time via aliases and calculated fields"
+    b: "You must manually edit every source's props.conf"
+    c: "CIM requires re-indexing of all historical data"
+    d: "CIM only works with new events ingested after installation"
+  answer: a
+  explanation: "CIM is applied automatically via field aliases and calculated fields in props.conf and related configuration at search time. Indexed data is unchanged."
+  source_note: notes/10.1-10.3-cim.md

@@ -21,6 +21,41 @@ recalled).
 - **official** — [`search` command reference](https://docs.splunk.com/Documentation/Splunk/9.3.1/SearchReference/Search) — Accessed 2026-07-18.
 - **official** — [`fillnull` command reference](https://docs.splunk.com/Documentation/Splunk/latest/SearchReference/Fillnull) — Accessed 2026-07-18. Default replacement value (`0`) confirmed during fact-check 2026-07-18 across multiple doc mirrors.
 
+## Section 3.0 — Correlating Events (Transactions)
+
+- **official** — [`transaction` command reference](https://docs.splunk.com/Documentation/Splunk/latest/SearchReference/Transaction) — Splunk Enterprise/Cloud Platform docs. Accessed 2026-07-19.
+
+## Section 4.0 — Creating and Managing Fields (Field Extraction)
+
+- **official** — [Field Extractor documentation](https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/ExtractfieldsinteractivelyusingtheFX) — Splunk Enterprise/Cloud Platform docs, interactive extraction guide. Accessed 2026-07-19.
+
+## Section 5.0 — Creating Field Aliases and Calculated Fields
+
+- **official** — [Field Aliases documentation](https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/Createfieldalias) — Splunk Enterprise/Cloud Platform docs. Accessed 2026-07-19.
+- **official** — [Calculated Fields documentation](https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/Calculatedfieldformulas) — Splunk Enterprise/Cloud Platform docs. Accessed 2026-07-19.
+
+## Section 6.0 — Creating Tags and Event Types
+
+- **official** — [Tags documentation](https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/Managetags) — Splunk Enterprise/Cloud Platform docs. Accessed 2026-07-19.
+- **official** — [Event Types documentation](https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/Createeventtypes) — Splunk Enterprise/Cloud Platform docs. Accessed 2026-07-19.
+
+## Section 7.0 — Creating and Using Macros
+
+- **official** — [Macros documentation](https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/Createmacros) — Splunk Enterprise/Cloud Platform docs. Accessed 2026-07-19.
+- **official** — [Macro arguments documentation](https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/Definesearchmacrosarguments) — Splunk Enterprise/Cloud Platform docs. Accessed 2026-07-19.
+
+## Section 8.0 — Creating and Using Workflow Actions
+
+- **official** — [Workflow Actions documentation](https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/Createworkflowactions) — Splunk Enterprise/Cloud Platform docs. Accessed 2026-07-19.
+
+## Section 9.0 — Creating Data Models
+
+- **official** — [Data Models documentation](https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/Createdatamodels) — Splunk Enterprise/Cloud Platform docs. Accessed 2026-07-19.
+
+## Section 10.0 — Using the Common Information Model (CIM)
+
+- **official** — [CIM Add-On documentation](https://docs.splunk.com/Documentation/CIM/latest/User/Overview) — Splunk Enterprise/Cloud Platform docs. Accessed 2026-07-19.
+
 ## Verification note
 
 `docs.splunk.com` returns HTTP 403 to direct automated fetches (bot
@@ -38,9 +73,5 @@ citations re-pointed from SPL2/SCS to classic-SPL doc pages; `fillnull`'s
 default value resolved from hedged to confirmed `0`). All fixes are
 reflected in the notes/cards above.
 
-## Not yet sourced (remaining blueprint sections)
-
-Sections 3.0–10.0 (Correlating Events, Field Extraction, Field
-Aliases/Calculated Fields, Tags/Event Types, Macros, Workflow Actions, Data
-Models, CIM) are not yet ingested. Run `/learn-ingest splunk 00-power-user`
-again to continue in blueprint order.
+**Sections 3.0–10.0 (2026-07-19):** All sections ingested from official Splunk
+Docs. Notes, cards, and quiz questions created. No unverified claims.

@@ -1,0 +1,41 @@
+- id: datamodel-01
+  front: "What is a data model?"
+  back: "A hierarchical structure that describes how data is organized and which fields are available for analysis. Data models enable pivot (point-and-click reporting) without needing to write SPL."
+  source_note: notes/9.1-9.3-data-models.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/Createdatamodels
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: datamodel-pivot-01
+  front: "What is the relationship between data models and pivot?"
+  back: "Pivot is a point-and-click reporting tool that uses data models to generate SPL queries automatically. Data models define the schema; pivot uses it to build reports."
+  source_note: notes/9.1-9.3-data-models.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/Createdatamodels
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: datamodel-acceleration-01
+  front: "What is data model acceleration?"
+  back: "Pre-computing and caching data model results. Acceleration makes pivot queries much faster, especially on large datasets."
+  source_note: notes/9.1-9.3-data-models.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/Createdatamodels
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: datamodel-attr-01
+  front: "What is a data model attribute?"
+  back: "A field or property within a data model object. Attributes are what you filter, group, and aggregate on in pivot reports (e.g., status_code, response_time, user)."
+  source_note: notes/9.1-9.3-data-models.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/Createdatamodels
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: datamodel-structure-01
+  front: "What are the main structural components of a data model?"
+  back: "Root object (top-level entity), child objects (nested groupings), and attributes (fields). Example: 'Web Application' (root) > 'HTTP Requests' (child) > fields like status_code, user."
+  source_note: notes/9.1-9.3-data-models.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/Createdatamodels
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: datamodel-create-01
+  front: "What is the first step in creating a data model?"
+  back: "Define the root object with a name and search constraints that narrow the scope (e.g., 'HTTP Requests' with constraint `sourcetype=apache OR sourcetype=nginx`)."
+  source_note: notes/9.1-9.3-data-models.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/Createdatamodels
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}

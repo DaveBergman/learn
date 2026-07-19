@@ -1,0 +1,41 @@
+- id: macro-01
+  front: "What is a macro in Splunk?"
+  back: "A reusable fragment of SPL that can be substituted into searches. Defined in macros.conf and called using backticks (e.g., `` `macro_name` ``)."
+  source_note: notes/7.1-7.4-macros.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/Createmacros
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: macro-02
+  front: "What syntax is used to call a macro named 'my_filter'?"
+  back: "Backticks: `` `my_filter` `` — the macro is substituted inline before search parsing."
+  source_note: notes/7.1-7.4-macros.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/Createmacros
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: macro-03
+  front: "When are macros substituted in the search pipeline?"
+  back: "Before search parsing — the macro's definition is expanded and inserted into the search before Splunk parses it."
+  source_note: notes/7.1-7.4-macros.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/Createmacros
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: macro-args-01
+  front: "How do you define an argument in a macro?"
+  back: "Use the syntax `$arg_name$` in the macro definition. When calling the macro, pass the argument: `` `macro_name(value)` ``"
+  source_note: notes/7.1-7.4-macros.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/Definesearchmacrosarguments
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: macro-args-02
+  front: "Can a macro accept multiple arguments?"
+  back: "Yes — define multiple `$arg_name$` placeholders in the definition and pass them comma-separated: `` `macro_name(arg1, arg2)` ``"
+  source_note: notes/7.1-7.4-macros.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/Definesearchmacrosarguments
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: macro-nesting-01
+  front: "Can one macro call another macro?"
+  back: "Yes — macros can be nested. A macro definition can contain a call to another macro using backticks."
+  source_note: notes/7.1-7.4-macros.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/Definesearchmacrosarguments
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}

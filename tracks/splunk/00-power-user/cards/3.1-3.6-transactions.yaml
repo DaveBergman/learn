@@ -1,0 +1,41 @@
+- id: transaction-01
+  front: "What is a transaction in Splunk?"
+  back: "A group of related events that share a common field value and fall within a time window. Transactions preserve individual events while marking them with shared transaction metadata."
+  source_note: notes/3.1-3.6-transactions.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/SearchReference/Transaction
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: transaction-02
+  front: "What is the default `maxpause` value for the `transaction` command?"
+  back: "30 minutes — if two consecutive events are separated by more than 30 minutes, a new transaction starts."
+  source_note: notes/3.1-3.6-transactions.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/SearchReference/Transaction
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: transaction-03
+  front: "What field tracks the total time span of a transaction?"
+  back: "`transaction_duration` — calculated as the end time minus the start time of the transaction."
+  source_note: notes/3.1-3.6-transactions.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/SearchReference/Transaction
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: transaction-04
+  front: "How does the `maxspan` option differ from `maxpause` in the transaction command?"
+  back: "`maxspan` limits the total time for the entire transaction (e.g., 1 hour); `maxpause` limits the gap between consecutive events (e.g., 30m). Both create a new transaction when exceeded."
+  source_note: notes/3.1-3.6-transactions.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/SearchReference/Transaction
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: transaction-vs-stats-01
+  front: "When should you use `transaction` instead of `stats`?"
+  back: "Use `transaction` when you need to preserve individual events within a group, track temporal sequences, or need original field values from each event. Use `stats` when you only need aggregate summaries."
+  source_note: notes/3.1-3.6-transactions.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/SearchReference/Transaction
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: transaction-vs-stats-02
+  front: "Which command is more efficient for large datasets: `transaction` or `stats`?"
+  back: "`stats` is more efficient because it collapses groups into single summary rows, whereas `transaction` preserves raw events, requiring more memory and processing."
+  source_note: notes/3.1-3.6-transactions.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/SearchReference/Transaction
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}

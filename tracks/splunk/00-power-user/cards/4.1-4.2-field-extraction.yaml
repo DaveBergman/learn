@@ -1,0 +1,41 @@
+- id: fx-regex-01
+  front: "What is the Field Extractor (FX) used for?"
+  back: "The FX is a GUI tool for creating field extractions interactively. It lets you extract unstructured data from logs using regex or delimiter patterns and save them as reusable field extractions."
+  source_note: notes/4.1-4.2-field-extraction.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/ExtractfieldsinteractivelyusingtheFX
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: fx-regex-02
+  front: "In regex extraction, what do parentheses () represent?"
+  back: "Capturing groups — the text matched within parentheses is captured and extracted as the field value."
+  source_note: notes/4.1-4.2-field-extraction.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/ExtractfieldsinteractivelyusingtheFX
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: fx-regex-03
+  front: "Where are field extractions created in the FX typically stored?"
+  back: "In `props.conf` (index-time) or `transforms.conf` (search-time or index-time), depending on the extraction type."
+  source_note: notes/4.1-4.2-field-extraction.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/ExtractfieldsinteractivelyusingtheFX
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: fx-delimiter-01
+  front: "When should you use delimiter extraction instead of regex?"
+  back: "When data is well-structured with consistent delimiters (CSV, tab-separated, etc.). Delimiter extraction is simpler and faster than regex for structured data."
+  source_note: notes/4.1-4.2-field-extraction.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/ExtractfieldsinteractivelyusingtheFX
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: fx-delimiter-02
+  front: "What is a performance advantage of delimiter extraction over regex?"
+  back: "Delimiter extraction splits data on fixed characters and is computationally simpler, making it faster than regex pattern matching, especially on large volumes."
+  source_note: notes/4.1-4.2-field-extraction.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/ExtractfieldsinteractivelyusingtheFX
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: fx-workflow-01
+  front: "What are the main steps in the FX workflow for regex extraction?"
+  back: "1. Open FX and select a sample event. 2. Highlight the value to extract. 3. Refine the generated regex. 4. Test against multiple events. 5. Save the extraction."
+  source_note: notes/4.1-4.2-field-extraction.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/ExtractfieldsinteractivelyusingtheFX
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}

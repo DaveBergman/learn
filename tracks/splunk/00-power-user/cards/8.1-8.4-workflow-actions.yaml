@@ -1,0 +1,41 @@
+- id: workflow-01
+  front: "What is a workflow action?"
+  back: "A custom interaction triggered by clicking a field value in search results. Workflow actions can execute HTTP requests (GET/POST) or trigger new Splunk searches."
+  source_note: notes/8.1-8.4-workflow-actions.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/Createworkflowactions
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: workflow-get-01
+  front: "When would you use a GET workflow action?"
+  back: "To make an HTTP GET request to an external service (e.g., query an IP reputation API). Useful for integrating Splunk with external systems."
+  source_note: notes/8.1-8.4-workflow-actions.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/Createworkflowactions
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: workflow-post-01
+  front: "What is an advantage of POST workflow actions over GET?"
+  back: "POST can send complex payloads in the request body, is more secure for sensitive data (not in URL), and supports authentication headers."
+  source_note: notes/8.1-8.4-workflow-actions.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/Createworkflowactions
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: workflow-search-01
+  front: "What macro token substitutes the value of a clicked field into a workflow action URL?"
+  back: "`$click.value$` — substitutes the field value. You can also use `$click.name$` for the field name."
+  source_note: notes/8.1-8.4-workflow-actions.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/Createworkflowactions
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: workflow-search-02
+  front: "When would you use a Search workflow action instead of GET/POST?"
+  back: "To pivot from one search to a related search within Splunk. Ideal for drilling down into raw events or investigating specific entities."
+  source_note: notes/8.1-8.4-workflow-actions.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/Createworkflowactions
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
+
+- id: workflow-field-restriction-01
+  front: "Can you restrict a workflow action to specific fields?"
+  back: "Yes — specify the field name(s) in the 'Field' setting. Leave blank to apply the action to all fields."
+  source_note: notes/8.1-8.4-workflow-actions.md
+  source_url: https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/Createworkflowactions
+  review: {interval: 0, ease: 2.5, due: null, reps: 0}
